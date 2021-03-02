@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.brand-name {
+  font-family: all-round-gothic, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p, div, span {
+  font-family: futura-pt,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -21,7 +33,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
