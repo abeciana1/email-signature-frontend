@@ -49,3 +49,36 @@ p, div, span {
     transform: rotate(360deg);
   }
 }
+
+.read-more-btn-dark {
+  color: #4C4C4C;
+  border: 2px solid #4C4C4C;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.read-more-btn-dark-solid {
+  color: #FFCD04;
+  border: 2px solid #4C4C4C;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #4C4C4C;
+}
+
+.read-more-btn-light {
+  color: #FFCD04;
+  border: 2px solid #FFCD04;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.read-more-btn-light-solid {
+  color: #4C4C4C;
+  /* font-weight: bold; */
+  border: 2px solid #FFCD04;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #FFCD04;
+}

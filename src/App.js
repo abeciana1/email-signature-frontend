@@ -6,6 +6,9 @@ import NavBar from './components/utilities/NavBar'
 //! pages
 import Home from './components/pages/Home'
 import About from './components/pages/About'
+import Contact from './components/pages/Contact'
+import Login from './components/pages/Login'
+import Signup from './components/pages/Signup'
 
 function App(props) {
   
@@ -14,10 +17,21 @@ function App(props) {
     <>
       <NavBar />
       <Switch>
+        <Route
+          path="/signup"
+          component={Signup}
+        />
+        <Route
+          path="/login"
+          component={Login}
+        />
+        <Route
+          path="/contact"
+          component={Contact}
+        />
         <Route 
           path="/about"
-          // component={About}
-          render={() => <About />}
+          component={About}
         />
         <Route
           path="/"

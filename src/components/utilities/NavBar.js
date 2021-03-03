@@ -13,12 +13,10 @@ const  NavBar = (props) => {
                 <Nav className="mr-auto">
                 </Nav>
                 <Nav>
-                    <Nav.Link href="/about" style={{"textDecoration":"none", color: "#4C4C4C"}}>About
-                        {/* <Link to= style={{ color: "#4C4C4C" }}>About</Link> */}
-                    </Nav.Link>
-                    <Nav.Link style={{ color: "#4C4C4C" }}>Contact</Nav.Link>
-                    <Nav.Link style={{ color: "#4C4C4C"}}>Signup</Nav.Link>
-                    <Nav.Link style={{ color: "#4C4C4C"}}>Login</Nav.Link>
+                    <Nav.Link href="/about" style={{ "textDecoration": "none", color: "#4C4C4C" }}>About</Nav.Link>
+                    <Nav.Link href="/contact" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>Contact</Nav.Link>
+                    <Nav.Link href="/signup" style={{ "textDecoration": "none", "color": "#4C4C4C"}}>Signup</Nav.Link>
+                    <Nav.Link href="/login" style={{ "textDecoration": "none", "color": "#4C4C4C"}}>Login</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
