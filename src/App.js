@@ -5,19 +5,24 @@ import NavBar from './components/utilities/NavBar'
 
 //! pages
 import Home from './components/pages/Home'
+import About from './components/pages/About'
 
 function App(props) {
   
   return (
-    // <div className="App">
-    // </div>
+
     <>
       <NavBar />
       <Switch>
+        <Route 
+          path="/about"
+          // component={About}
+          render={() => <About />}
+        />
         <Route
           path="/"
           render={() => <Home />}
-          /> 
+        />
       </Switch>
     </>
   );

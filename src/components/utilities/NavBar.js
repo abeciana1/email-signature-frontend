@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
-const  NavBar = () => {
+const  NavBar = (props) => {
     return (
         <Navbar bg="" expand="lg">
             <Link to="/" style={{"textDecoration":"none"}}>
@@ -13,7 +13,9 @@ const  NavBar = () => {
                 <Nav className="mr-auto">
                 </Nav>
                 <Nav>
-                    <Nav.Link style={{ color: "#4C4C4C" }}>About</Nav.Link>
+                    <Nav.Link href="/about" style={{"textDecoration":"none", color: "#4C4C4C"}}>About
+                        {/* <Link to= style={{ color: "#4C4C4C" }}>About</Link> */}
+                    </Nav.Link>
                     <Nav.Link style={{ color: "#4C4C4C" }}>Contact</Nav.Link>
                     <Nav.Link style={{ color: "#4C4C4C"}}>Signup</Nav.Link>
                     <Nav.Link style={{ color: "#4C4C4C"}}>Login</Nav.Link>
@@ -23,4 +25,4 @@ const  NavBar = () => {
     );
 }
 
-export default NavBar
+export default withRouter(NavBar)
