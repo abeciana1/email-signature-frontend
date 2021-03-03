@@ -4,7 +4,8 @@ import './App.css';
 //! pages
 import Home from './components/pages/Home'
 
-function App() {
+function App(props) {
+  
   return (
     // <div className="App">
     // </div>
