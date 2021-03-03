@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Col } from 'react-bootstrap'
 
+import { connect } from "react-redux";
+import { signupUser } from '../../actions/user-actions'
+
 class SignupForm extends Component {
 
     state = {
@@ -11,31 +14,75 @@ class SignupForm extends Component {
         password: ''
     }
 
+    changeHandler = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    submitHandler = (e) => {
+        e.preventDefault()
+        this.props.signupUser(this.state)
+    }
+
     render() {
+        console.log(this.props)
+        // console.log(this.state)
         return (
-            <Form style={{"padding":"10px", "borderRadius":"15px", "backgroundColor":"#4C4C4C"}}>
+            <Form onSubmit={this.submitHandler} style={{"padding":"10px", "borderRadius":"15px", "backgroundColor":"#4C4C4C"}}>
                 <Form.Row>
                     <Form.Group as={Col}>
                         <Form.Label style={{"color":"#FFCD04"}}>First Name</Form.Label>
-                        <Form.Control type="text" placeholder="First Name" name="first_name" value={this.state.first_name} />
+                        <Form.Control type="text" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.changeHandler} />
                     </Form.Group>
                     <Form.Group as={Col}>
                         <Form.Label style={{"color":"#FFCD04"}}>Last Name</Form.Label>
-                        <Form.Control type="text" placeholder="Last Name" name="last_name" value={this.state.last_name} />
+                        <Form.Control type="text" placeholder="Last Name" name="last_name" value={this.state.last_name} onChange={this.changeHandler} />
                     </Form.Group>
                 </Form.Row>
                 <Form.Group>
+                    <Form.Label style={{ "color": "#FFCD04" }}>Job Title</Form.Label>
+                    <Form.Control type="text" placeholder="Job Title" name="job_title" value={this.state.job_title} onChange={this.changeHandler}/>
+                </Form.Group>
+                <Form.Group>
                     <Form.Label style={{"color":"#FFCD04"}}>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Email Address" name="email" value={this.state.email} />
+                    <Form.Control type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={this.changeHandler} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label style={{"color":"#FFCD04"}}>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" value={this.state.password} />
+                    <Form.Control type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.changeHandler} />
                 </Form.Group>
+                <div style={{"color":"white"}}>
+                    {this.props.user.first_name}
+                </div>
                 <input type="submit" value="Signup" className="read-more-btn-light-solid" style={{"fontWeight": "500"}} />
             </Form>
         );
     }
 }
 
-export default SignupForm
+// const mapStateToProps = (state) => {
+//     // console.log(state)
+//     return {
+//         user: state.user
+//     }
+// }
+
+const mapDispatchToProps = {
+    signupUser
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         signupUser: (userData) => dispatch({
+//             type: SIGNUP_USER,
+//             payload: userData
+//         })
+//     }
+// }
+
+const mapStateToProps = (state) => {
+    return state.user
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)

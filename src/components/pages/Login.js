@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 
 import DefaultLayout from "../layouts/DefaultLayout.js";
 
+import LoginForm from '../forms/LoginForm'
+
 const Login = (props) => {
     return (
         <React.Fragment>
@@ -11,6 +13,7 @@ const Login = (props) => {
             </Helmet>
             <DefaultLayout>
                 <h1>Login</h1>
+                <LoginForm />
             </DefaultLayout>
         </React.Fragment>
     )

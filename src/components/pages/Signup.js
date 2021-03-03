@@ -2,6 +2,7 @@ import React from 'react'
 import DefaultLayout from "../layouts/DefaultLayout.js";
 import { Helmet } from "react-helmet";
 
+
 import SignupForm from '../forms/SignupForm'
 
 const Signup = (props) => {
