@@ -1,7 +1,7 @@
-// import react from 'react';
 import DefaultLayout from '../layouts/DefaultLayout.js'
 import { Helmet } from 'react-helmet'
-// import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
 
 const Home = (props) => {
     // document.body.style = "background: red;";
@@ -16,10 +16,18 @@ const Home = (props) => {
             <DefaultLayout>
                 <div style={{"textAlign":"center"}}>
                     <h1 className="brand-name" style={{ "fontSize": "50px" }}>jobase</h1>
-                    <div style={{"fontSize": "25px"}}>Making the job search simple</div>
+                    <div style={{ "fontSize": "25px" }}>Making the job search simple</div>
+                    <div style={{ "marginTop": "15px" }}>
+                        <Link to="/" style={{"textDecoration":"none", "color": "#4C4C4C"}}>
+                            <img src="https://img.icons8.com/pastel-glyph/64/000000/feather.png" alt="email-signature-tool" style={{ "width":"5rem"}}/>
+                            <div>Email Signature</div>
+                        </Link>
+                    </div>
                 </div>
-                {/* <Row xs={1} md={2}>
-                </Row> */}
+                <Row>
+                    <Col>
+                    </Col>
+                </Row>
             </DefaultLayout>
         </>
     )
