@@ -1,17 +1,16 @@
 import { SIGNUP_USER, LOGIN_USER } from '../actions/user-actions'
 
 const initialState = {
-    user: {},
+    currentUser: {},
 }
 
 const usersReducer = (state = initialState, action) => {
-    console.log("from user reducer", action)
+    // console.log("from user reducer", action)
     switch (action.type) {
         case SIGNUP_USER:
-            // console.log("inside user reducer", action.payload)
             return {
                 ...state,
-                user: action.payload
+                currentUser: action.payload
             }
         case LOGIN_USER:
             return {

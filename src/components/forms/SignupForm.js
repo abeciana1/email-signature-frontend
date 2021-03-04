@@ -52,37 +52,14 @@ class SignupForm extends Component {
                     <Form.Label style={{"color":"#FFCD04"}}>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.changeHandler} />
                 </Form.Group>
-                <div style={{"color":"white"}}>
-                    {this.props.user.first_name}
-                </div>
                 <input type="submit" value="Signup" className="read-more-btn-light-solid" style={{"fontWeight": "500"}} />
             </Form>
         );
     }
 }
 
-// const mapStateToProps = (state) => {
-//     // console.log(state)
-//     return {
-//         user: state.user
-//     }
-// }
-
 const mapDispatchToProps = {
     signupUser
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         signupUser: (userData) => dispatch({
-//             type: SIGNUP_USER,
-//             payload: userData
-//         })
-//     }
-// }
-
-const mapStateToProps = (state) => {
-    return state.user
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)
+export default connect(null, mapDispatchToProps)(SignupForm)
