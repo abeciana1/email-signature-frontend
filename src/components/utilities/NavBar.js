@@ -8,13 +8,11 @@ import { connect } from 'react-redux'
 import { logOutUser } from '../../actions/user-actions'
 
 const logOutUserHandler = (props) => {
-    console.log(props)
     props.logOutUser()
     props.history.push("/")
 }
 
 const NavBar = (props) => {
-    // console.log(props)
     return (
         <Navbar bg="" expand="lg">
             <Link to="/" style={{"textDecoration":"none"}}>
@@ -27,7 +25,11 @@ const NavBar = (props) => {
                 <Nav>
                     <Nav.Link href="/about" style={{ "textDecoration": "none", color: "#4C4C4C" }}>About</Nav.Link>
                     <Nav.Link href="/contact" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>Contact</Nav.Link>
+                    {props.user.currentUser ?
+                    null
+                    :
                     <Nav.Link href="/signup" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>Signup</Nav.Link>
+                    }
                     {props.user.currentUser ?
                     <Nav.Link style={{ "textDecoration": "none", "color": "#4C4C4C"}} onClick={() => logOutUserHandler(props)}>Logout</Nav.Link>
                     :

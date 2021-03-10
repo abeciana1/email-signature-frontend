@@ -6,11 +6,25 @@ export const CHECK_USER_LOGGED_IN = "CHECK_USER_LOGGED_IN"
 const BASE_URL = "http://localhost:3000/api/v1"
 
 export const signupUser = (userData) => {
-    //! fetches live here
-
-    return {
-        type: SIGNUP_USER,
-        payload: userData
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(userData)
+    }
+    return (dispatch) => {
+        fetch(BASE_URL + "/users", options)
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem("isLoggedIn", true)
+                dispatch({
+                    type: SIGNUP_USER,
+                    payload: data.user
+                })
+        })
     }
 }
 
