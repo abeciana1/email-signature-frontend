@@ -33,7 +33,6 @@ export const loginUser = (userData) => {
         fetch(BASE_URL + "/login", options)
         .then(response => response.json())
         .then(data => {
-                console.log(data.user)
                 localStorage.setItem("isLoggedIn", true)
                 dispatch({
                     type: LOGIN_USER,
@@ -48,13 +47,12 @@ export const logOutUser = () => {
     return (dispatch) => {
         dispatch({
             type: LOGOUT_USER,
-            payload: {}
+            payload: null
         })
     }
 }
 
 export const checkUser = () => {
-    // console.log("checking user")
     const options = {
         method: 'GET',
         credentials: 'include'

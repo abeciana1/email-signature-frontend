@@ -1,11 +1,10 @@
 import { SIGNUP_USER, LOGIN_USER, CHECK_USER_LOGGED_IN, LOGOUT_USER } from '../actions/user-actions'
 
 const initialState = {
-    currentUser: {},
+    currentUser: null,
 }
 
 const usersReducer = (state = initialState, action) => {
-    // console.log("from user reducer", action)
     console.log(action)
     switch (action.type) {
         case SIGNUP_USER:

@@ -52,12 +52,12 @@ function App(props) {
 
 // export default withRouter(App);
 
-const mapStateToProps = (state) => {
-  console.log("app.js", state);
-}
+// const mapStateToProps = (state) => {
+//   console.log("app.js", state);
+// }
 
 const mapDispatchToProps = {
   checkUser
 }
 
-export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(App)
+export default compose(withRouter, connect(null, mapDispatchToProps))(App)
