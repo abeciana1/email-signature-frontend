@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet'
 
-import DefaultLayout from "../layouts/DefaultLayout.js";
+import DefaultLayout from "../../layouts/DefaultLayout.js";
 
-import LoginForm from '../forms/LoginForm'
+import LoginForm from '../../forms/LoginForm'
 
 const Login = (props) => {
     return (

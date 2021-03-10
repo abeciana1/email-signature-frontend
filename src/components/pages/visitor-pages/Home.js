@@ -1,4 +1,4 @@
-import DefaultLayout from '../layouts/DefaultLayout.js'
+import DefaultLayout from '../../layouts/DefaultLayout.js'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'

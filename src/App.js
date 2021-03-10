@@ -7,12 +7,15 @@ import { checkUser } from './actions/user-actions'
 
 import NavBar from './components/utilities/NavBar'
 
-//! pages
-import Home from './components/pages/Home'
-import About from './components/pages/About'
-import Contact from './components/pages/Contact'
-import Login from './components/pages/Login'
-import Signup from './components/pages/Signup'
+//! visitor pages
+import Home from './components/pages/visitor-pages/Home'
+import About from './components/pages/visitor-pages/About'
+import Contact from './components/pages/visitor-pages/Contact'
+import Login from './components/pages/visitor-pages/Login'
+import Signup from './components/pages/visitor-pages/Signup'
+
+//! logged in pages
+import EmailSignature from './components/pages/logged-in-pages/EmailSignture'
 
 function App(props) {
   
@@ -25,6 +28,10 @@ function App(props) {
     <>
       <NavBar />
       <Switch>
+        <Route
+          path="signature-creator"
+          component={EmailSignature}
+        />
         <Route
           path="/signup"
           component={Signup}

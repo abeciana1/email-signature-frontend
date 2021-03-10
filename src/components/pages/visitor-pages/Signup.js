@@ -1,10 +1,10 @@
 import React from 'react'
-import DefaultLayout from "../layouts/DefaultLayout.js";
+import DefaultLayout from "../../layouts/DefaultLayout.js";
 import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom'
 
 
-import SignupForm from '../forms/SignupForm'
+import SignupForm from '../../forms/SignupForm'
 
 const Signup = (props) => {
     return (
