@@ -1,5 +1,9 @@
 import { Switch, Route, withRouter } from "react-router-dom";
+import { compose } from 'redux'
+import { connect } from 'react-redux'
 import './App.css';
+
+import { checkUser } from './actions/user-actions'
 
 import NavBar from './components/utilities/NavBar'
 
@@ -12,6 +16,10 @@ import Signup from './components/pages/Signup'
 
 function App(props) {
   
+  if (localStorage.getItem("isLoggedIn")) {
+    props.checkUser()
+  }
+
   return (
 
     <>
@@ -42,4 +50,14 @@ function App(props) {
   );
 }
 
-export default withRouter(App);
+// export default withRouter(App);
+
+const mapStateToProps = (state) => {
+  console.log("app.js", state);
+}
+
+const mapDispatchToProps = {
+  checkUser
+}
+
+export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(App)

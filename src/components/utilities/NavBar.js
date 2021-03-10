@@ -2,6 +2,9 @@ import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link, withRouter } from 'react-router-dom'
 
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+
 const  NavBar = (props) => {
     return (
         <Navbar bg="" expand="lg">

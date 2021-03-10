@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
 
-export default class LoginForm extends Component {
+import { compose } from 'redux'
+import { withRouter } from 'react-router-dom'
+
+import { connect } from "react-redux";
+import { loginUser } from '../../actions/user-actions'
+
+class LoginForm extends Component {
 
     state = {
         email: '',
@@ -16,7 +22,8 @@ export default class LoginForm extends Component {
 
     submitHandler = (e) => {
         e.preventDefault()
-        console.log("login")
+        this.props.loginUser(this.state)
+        this.props.history.push("/")
     }
 
     render() {
@@ -35,3 +42,9 @@ export default class LoginForm extends Component {
         )
     }
 }
+
+const mapDispatchToProps = {
+    loginUser
+}
+
+export default compose(withRouter, connect(null, mapDispatchToProps))(LoginForm)

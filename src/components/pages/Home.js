@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 
 const Home = (props) => {
+    // console.log(localStorage)
 
     return (
         <>
@@ -11,7 +12,8 @@ const Home = (props) => {
                 <style>{'body { background-color: #FFCD04; }'}</style>
             </Helmet>
             <DefaultLayout>
-                <div style={{"textAlign":"center"}}>
+                <div style={{ "textAlign": "center" }}>
+                    {localStorage.getItem("isLoggedIn") ? <h1>signed in</h1> : null}
                     <h1 className="brand-name" style={{ "fontSize": "50px" }}>jobase</h1>
                     <div style={{ "fontSize": "25px" }}>Making the job search simple</div>
                     <div style={{ "marginTop": "15px" }}>
