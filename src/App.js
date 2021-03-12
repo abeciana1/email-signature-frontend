@@ -29,7 +29,7 @@ function App(props) {
       <NavBar />
       <Switch>
         <Route
-          path="signature-creator"
+          path="/signature-creator"
           component={EmailSignature}
         />
         <Route

@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultLayout from "../../layouts/DefaultLayout.js";
+import DefaultLayout from "../../layouts/page-layouts/DefaultLayout.js";
 import { Helmet } from "react-helmet";
 
 const Contact = () => {
