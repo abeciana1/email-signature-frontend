@@ -1,4 +1,3 @@
-// import react from 'react'
 import styled from "styled-components";
 
 const DefaultLayoutWrapper = styled.section`
@@ -12,6 +11,7 @@ color: #4C4C4C
 `
 
 const DefaultLayout = (props) => {
+    console.log(props)
     return (
             <DefaultLayoutWrapper>
                 {props.children}

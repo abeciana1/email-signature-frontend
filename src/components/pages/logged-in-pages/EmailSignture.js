@@ -4,6 +4,8 @@ import FullPageLayout from '../../layouts/page-layouts/FullPageLayout'
 
 import MediaQuery from "react-responsive";
 
+import { Col, Row } from 'react-bootstrap'
+
 const EmailSignature = (props) => {
     return (
         <React.Fragment>
@@ -19,6 +21,19 @@ const EmailSignature = (props) => {
                     <h2 style={{"textAlign": "center", "paddingTop":"10%", "width":"75%"}}>
                         Please visit the Desktop version of this application to use the Email Signature Creator
                     </h2>
+                </MediaQuery>
+                <MediaQuery minWidth={1026}>
+                    <div style={{"padding":"2%", "textAlign": "center"}}>
+                        <Row>
+                            <Col sm={4}>
+                                Form 
+                            </Col>
+                            <Col sm={8}>
+                                Preview
+                                
+                            </Col>
+                        </Row>
+                    </div>
                 </MediaQuery>
             </FullPageLayout>
         </React.Fragment>
