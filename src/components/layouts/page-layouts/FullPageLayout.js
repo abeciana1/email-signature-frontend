@@ -8,7 +8,8 @@ ${'' /* margin-bottom: 10%; */}
 margin-left: auto;
 margin-right: auto;
 width: 90%;
-color: #4C4C4C
+color: #4C4C4C;
+margin-bottom: 0
 `
 
 const FullPageLayout = (props) => {

@@ -2,6 +2,7 @@ export const SIGNUP_USER = "SIGNUP_USER"
 export const LOGIN_USER = "LOGIN_USER"
 export const LOGOUT_USER = "LOGOUT_USER"
 export const CHECK_USER_LOGGED_IN = "CHECK_USER_LOGGED_IN"
+export const VISITOR_USER = "VISITOR_USER"
 
 const BASE_URL = "http://localhost:3000/api/v1"
 
@@ -84,4 +85,13 @@ export const checkUser = () => {
         })
     }
 
+}
+
+export const visitorUser = (userData) => {
+    return (dispatch) => {
+        dispatch({
+            type: VISITOR_USER,
+            payload: userData
+        })
+    }
 }
