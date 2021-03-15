@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 import FullPageLayout from '../../layouts/page-layouts/FullPageLayout'
-
+import EmailSignatureDetailsForm from '../../forms/EmailSignatureDetailsForm'
 import MediaQuery from "react-responsive";
 
 import { Col, Row } from 'react-bootstrap'
@@ -23,10 +23,13 @@ const EmailSignature = (props) => {
                     </h2>
                 </MediaQuery>
                 <MediaQuery minWidth={1026}>
-                    <div style={{"padding":"2%", "textAlign": "center"}}>
+                    <div style={{ "padding": "2%", "textAlign": "center" }}>
+                        <h3>Choose a Layout:</h3>
+                        <p>Slider with layout options</p>
                         <Row>
                             <Col sm={4}>
-                                Form 
+                                Enter Your Signature Details
+                                <EmailSignatureDetailsForm />
                             </Col>
                             <Col sm={8}>
                                 Preview
