@@ -11,7 +11,7 @@ color: #4C4C4C
 `
 
 const DefaultLayout = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
             <DefaultLayoutWrapper>
                 {props.children}

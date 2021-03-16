@@ -5,7 +5,6 @@ const initialState = {
 }
 
 const usersReducer = (state = initialState, action) => {
-    // console.log(action)
     switch (action.type) {
         case SIGNUP_USER:
             return {
@@ -26,6 +25,7 @@ const usersReducer = (state = initialState, action) => {
             }
         case VISITOR_USER:
             return {
+                ...state,
                 currentUser: action.payload
             }
         default: return state

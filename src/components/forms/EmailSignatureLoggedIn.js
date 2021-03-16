@@ -5,37 +5,38 @@ import { connect } from "react-redux";
 
 import { visitorUser } from '../../actions/user-actions'
 
-class EmailSignatureDetailsForm extends React.Component {
+class EmailSignatureLoggedIn extends React.Component {
 
+    // TODO replace "" values with current user values
     state = {
-        profile_image: "",
-        first_name : "",
-        last_name : "",
-        job_title : "",
-        department : "",
-        company_name : "",
-        office_phone : "",
-        mobile_phone : "",
-        website_url : "",
-        email : "",
-        address_1 : "",
-        address_2 : "",
-        address_3 : "",
-        address_4 : "",
-        linkedin : "",
-        twitter : "",
-        github : "",
-        bonus_field: ""
+        profile_image: this.props.user.currentUser.profile_image,
+        first_name : this.props.user.currentUser.first_name,
+        last_name : this.props.user.currentUser.last_name,
+        job_title : this.props.user.currentUser.job_title,
+        department : this.props.user.currentUser.department,
+        company_name : this.props.user.currentUser.company_name,
+        office_phone : this.props.user.currentUser.office_phone,
+        mobile_phone : this.props.user.currentUser.mobile_phone,
+        website_url : this.props.user.currentUser.website_url,
+        email : this.props.user.currentUser.email,
+        address_1 : this.props.user.currentUser.address_1,
+        address_2 : this.props.user.currentUser.address_2,
+        address_3 : this.props.user.currentUser.address_3,
+        address_4 : this.props.user.currentUser.address_4,
+        linkedin : this.props.user.currentUser.linkedin,
+        twitter : this.props.user.currentUser.twitter,
+        github : this.props.user.currentUser.github,
+        bonus_field: this.props.user.currentUser.bonus_field
     }
 
     changeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
-        this.props.visitorUser(this.state)
     }
 
     render() {
+        // console.log(this.props.user.currentUser)
         return (
             <React.Fragment>
                 <h4>Enter Your Signature Details</h4>
@@ -113,18 +114,19 @@ class EmailSignatureDetailsForm extends React.Component {
                         <Form.Label>Bonus Field</Form.Label>
                         <Form.Control type="text" placeholder="Bonus Field" name="bonus_field" value={this.state.bonus_field} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
+                    {/* Add update information here -- !!! can reuse this form in user settings page */}
                 </Form>
             </React.Fragment>
         )
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return state
-// }
+const mapStateToProps = (state) => {
+    return state
+}
 
 const mapDispatchToProps = {
     visitorUser
 }
 
-export default connect(null, mapDispatchToProps)(EmailSignatureDetailsForm)
+export default connect(mapStateToProps, mapDispatchToProps)(EmailSignatureLoggedIn)

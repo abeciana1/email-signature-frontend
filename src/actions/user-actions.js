@@ -88,10 +88,9 @@ export const checkUser = () => {
 }
 
 export const visitorUser = (userData) => {
-    return (dispatch) => {
-        dispatch({
+    console.log(userData)
+    return {
             type: VISITOR_USER,
             payload: userData
-        })
-    }
+        }
 }
