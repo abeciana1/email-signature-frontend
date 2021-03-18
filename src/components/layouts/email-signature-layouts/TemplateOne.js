@@ -1,58 +1,74 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux'
 
-import { Col, Row } from 'react-bootstrap'
+// import { Col, Row } from 'react-bootstrap'
+
+
 
 const TemplateOne = (props) => {
 
-    const PROFILE_IMAGE = props.user.currentUser.profile_image
-    const FIRST_NAME = props.user.currentUser.first_name
-    const LAST_NAME = props.user.currentUser.last_name
-    const JOB_TITLE = props.user.currentUser.job_title
-    const DEPARTMENT = props.user.currentUser.department
-    const COMPANY_NAME = props.user.currentUser.company
-    const OFFICE_PHONE = props.user.currentUser.office_phone
-    const MOBILE_PHONE = props.user.currentUser.mobile_phone
-    const WEBSITE_URL = props.user.currentUser.website_url
-    const EMAIL = props.user.currentUser.email
-    const ADDRESS_1 = props.user.currentUser.address_1
-    const ADDRESS_2 = props.user.currentUser.address_2
-    const ADDRESS_3 = props.user.currentUser.address_3
-    const ADDRESS_4 = props.user.currentUser.address_4
-    const LINKEDIN = props.user.currentUser.linkedin
-    const TWITTER = props.user.currentUser.twitter
-    const GITHUB = props.user.currentUser.github
-    const BONUS_FIELD = props.user.currentUser.bonus_field
-
-
-    console.log(props)
+        console.log(props.currentUser)
     return (
         <React.Fragment>
-            {/* <div style={{"marginRight":"auto", "marginLeft":"auto"}}> */}
-                <Row md={4}>
-                    <Col></Col>
-                    <Col xs={6}>
-                        {PROFILE_IMAGE ?
-                        <img src={PROFILE_IMAGE} alt={FIRST_NAME + " " + LAST_NAME} style={{ "width": "130px", "maxWidth": "128px" }} />
-                        : null}
-                        <div style={{"paddingTop":"10px"}}>
-                        {LINKEDIN ? "hi" : null}
-                        </div>
-                    </Col>
-                    <Col></Col>
-                    <Col></Col>
-                </Row>
-            {/* </div> */}
+            <div style={{"marginRight":"auto", "marginLeft":"auto", "padding":"20px"}}>
+            {props.currentUser ? 
+                <table style={{"marginLeft":"auto", "marginRight":"auto"}}>
+                <tbody>
+                {/* <tr> */}
+                    <td>
+                    <table>
+                        <tbody>    
+                        <tr>
+                            <td style={{"textAlign":"center"}}>    
+                                {props.currentUser.profile_image ?
+                                <img src={props.currentUser.profile_image} alt={props.currentUser.first_name + " " + props.currentUser.last_name} style={{ "width": "130px", "maxWidth": "128px" }} />
+                                : 
+                                <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/placeholder-image@2x.png" alt="Default" style={{ "width": "130px", "maxWidth": "128px" }} /> 
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{"height":"30px"}}></td>
+                        </tr>
+                        {/* <tr></tr> */}
+                            <div style={{"paddingTop":"10px"}}>
+                                {props.currentUser.linkedin ? "hi"
+                                : null}
+                            </div>
+                        </tbody>
+                    </table>
+                    </td>
+                    <td style={{"width":"20px"}}></td>
+                    <table>
+                        <tr>        
+                            <td>
+                                <h3 style={{"fontSize":"18px"}}>
+                                    <span>{props.currentUser.first_name}</span>
+                                            {/* {props.currentUser.first_name}{" "}{props.currentUser.last_name} */}
+                                    <span>{" "}</span>
+                                    <span>{props.currentUser.last_name}</span>
+                                </h3>
+                            </td>
+                        </tr>
+                    </table>
+                {/* </tr> */}
+                </tbody>
+                </table>
+                : 
+                    null}
+                </div>
         </React.Fragment>
     )
 }
 
 const mapStateToProps = (state) => {
-    return state
+    return state.user
 }
 
 // const mapDispatchToProps = {
 
 // }
+// 
+// export default TemplateOne
 
 export default connect(mapStateToProps, null)(TemplateOne)

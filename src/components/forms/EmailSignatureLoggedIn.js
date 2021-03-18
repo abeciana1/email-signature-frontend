@@ -3,11 +3,11 @@ import React from 'react'
 import { Form } from 'react-bootstrap'
 import { connect } from "react-redux";
 
-import { visitorUser } from '../../actions/user-actions'
+import { emailSignatureUser } from '../../actions/user-actions'
 
 class EmailSignatureLoggedIn extends React.Component {
 
-    // TODO replace "" values with current user values
+    
     state = {
         profile_image: this.props.user.currentUser.profile_image,
         first_name : this.props.user.currentUser.first_name,
@@ -32,11 +32,10 @@ class EmailSignatureLoggedIn extends React.Component {
     changeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        }, () => this.props.emailSignatureUser(this.state))
     }
 
     render() {
-        // console.log(this.props.user.currentUser)
         return (
             <React.Fragment>
                 <h4>Enter Your Signature Details</h4>
@@ -126,7 +125,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    visitorUser
+    emailSignatureUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmailSignatureLoggedIn)

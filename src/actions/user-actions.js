@@ -3,6 +3,7 @@ export const LOGIN_USER = "LOGIN_USER"
 export const LOGOUT_USER = "LOGOUT_USER"
 export const CHECK_USER_LOGGED_IN = "CHECK_USER_LOGGED_IN"
 export const VISITOR_USER = "VISITOR_USER"
+export const EMAIL_SIGNTURE = "EMAIL_SIGNTURE"
 
 const BASE_URL = "http://localhost:3000/api/v1"
 
@@ -88,9 +89,16 @@ export const checkUser = () => {
 }
 
 export const visitorUser = (userData) => {
-    console.log(userData)
+    // console.log(userData)
     return {
             type: VISITOR_USER,
             payload: userData
         }
+}
+
+export const emailSignatureUser = (userData) => {
+    return {
+        type: EMAIL_SIGNTURE,
+        payload: userData
+    }
 }

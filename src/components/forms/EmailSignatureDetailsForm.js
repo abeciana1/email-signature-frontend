@@ -28,14 +28,19 @@ class EmailSignatureDetailsForm extends React.Component {
         bonus_field: ""
     }
 
+    
+
+
     changeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
-        this.props.visitorUser(this.state)
+        }, () => this.props.visitorUser(this.state))
+        
+        // this.props.changeHandler(this.state)
     }
 
     render() {
+        // this.changeHandler = this.changeHandler.bind(this);
         return (
             <React.Fragment>
                 <h4>Enter Your Signature Details</h4>

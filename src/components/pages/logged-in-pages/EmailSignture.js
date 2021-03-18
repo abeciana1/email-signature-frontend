@@ -14,8 +14,6 @@ import TemplateOne from '../../layouts/email-signature-layouts/TemplateOne'
 
 // const EmailSignature = (props) => {
 class EmailSignature extends React.Component {
-
-    
     // switch (tab) {
         //     // case "Details":
         //     //     return ()
@@ -24,6 +22,9 @@ class EmailSignature extends React.Component {
             //             <h1>hello tab switch</h1>
             //         )
             // }
+    // visitor={this.state.visitor} currentUserL={this.props.user.currentUser} visitorUserL={this.props.user.visitorUser}
+    
+    
             
         render() {
         return (
@@ -54,14 +55,14 @@ class EmailSignature extends React.Component {
                                         { this.props.user.currentUser ?
                                         <EmailSignatureLoggedIn />
                                         :
-                                        <EmailSignatureDetailsForm />} {/* Use for non-logged-in user*/}
+                                        <EmailSignatureDetailsForm changeHandler={this.changeHandler} />} {/* Use for non-logged-in user*/}
                                         </div>
                                     </div>
                                 </Col>
                                 <Col sm={8}>
                                     <h4>Preview</h4>
                                     <div style={{"padding":"10%","backgroundColor":"#4C4C4C", "marginTop":"5%"}}>
-                                        <div style={{"backgroundColor":"#FBFBFB", "padding":"5px"}}>
+                                        <div style={{"backgroundColor":"#FBFBFB", "paddingTop":"10px", "paddingBottom":"10px"}}>
                                             {/* selected layout of signature */}
                                             <TemplateOne />
                                         </div>
