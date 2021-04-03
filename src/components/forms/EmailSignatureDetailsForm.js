@@ -103,12 +103,12 @@ class EmailSignatureDetailsForm extends React.Component {
                         <Form.Control type="text" placeholder="Address Line 4" name="address_4" value={this.state.address_4} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>LinkedIn</Form.Label>
-                        <Form.Control type="text" placeholder="LinkedIn" name="linkedin" value={this.state.linkedin} onChange={this.changeHandler} style={{"width":"75%"}}/>
-                    </Form.Group>
-                    <Form.Group>
                         <Form.Label>Twitter</Form.Label>
                         <Form.Control type="text" placeholder="Twitter" name="twitter" value={this.state.twitter} onChange={this.changeHandler} style={{"width":"75%"}}/> 
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>LinkedIn</Form.Label>
+                        <Form.Control type="text" placeholder="LinkedIn" name="linkedin" value={this.state.linkedin} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>GitHub</Form.Label>
