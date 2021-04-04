@@ -345,84 +345,93 @@ const TemplateOne = (props) => {
                               }}
                             >
                               <tbody>
-                                <tr
-                                  height="25"
-                                  style={{ verticalAlign: "middle" }}
-                                >
-                                  <td
-                                    width="30"
+                                {props.currentUser.office_phone || props.currentUser.mobile_phone ?
+                                  <tr
+                                    height="25"
                                     style={{ verticalAlign: "middle" }}
                                   >
-                                    <table
-                                      cellpadding="0"
-                                      cellspacing="0"
-                                      style={{
-                                        fontSize: "medium",
-                                        fontFamily: "Arial",
-                                      }}
+                                    <td
+                                      width="30"
+                                      style={{ verticalAlign: "middle" }}
                                     >
-                                      <tbody>
-                                        <tr>
-                                          <td
-                                            style={{ verticalAlign: "bottom" }}
-                                          >
-                                            <span
-                                              style={{
-                                                display: "block",
-                                                backgroundColor:
-                                                  "rgb(242, 84, 125)",
-                                              }}
+                                      <table
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        style={{
+                                          fontSize: "medium",
+                                          fontFamily: "Arial",
+                                        }}
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style={{ verticalAlign: "bottom" }}
                                             >
-                                              <img
-                                                src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png"
-                                                width="13"
+                                              <span
                                                 style={{
                                                   display: "block",
                                                   backgroundColor:
                                                     "rgb(242, 84, 125)",
                                                 }}
-                                              />
-                                            </span>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-
-                                  <td
-                                    style={{
-                                      padding: "0px",
-                                      color: "rgb(0, 0, 0)",
-                                    }}
-                                  >
-                                    <a
-                                      href="tel:555-555-5555"
-                                      alt="company phone"
+                                              >
+                                                <img
+                                                  src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png"
+                                                  width="13"
+                                                  style={{
+                                                    display: "block",
+                                                    backgroundColor:
+                                                      "rgb(242, 84, 125)",
+                                                  }}
+                                                  alt="Phone icon"
+                                                />
+                                              </span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                    <td
                                       style={{
-                                        textDecoration: "none",
+                                        padding: "0px",
                                         color: "rgb(0, 0, 0)",
-                                        fontSize: "12px",
                                       }}
                                     >
-                                      <span>
-                                        {props.currentUser.office_phone}
-                                      </span>
-                                    </a>{" "}
-                                    |
-                                    <a
-                                      href="tel:555-555-555"
-                                      style={{
-                                        textDecoration: "none",
-                                        color: "rgb(0, 0, 0)",
-                                        fontSize: "12px",
-                                      }}
-                                    >
-                                      <span>
-                                        {props.currentUser.mobile_phone}
-                                      </span>
-                                    </a>
-                                  </td>
-                                </tr>
+                                      <a
+                                        href="tel:555-555-5555"
+                                        alt="company phone"
+                                        style={{
+                                          textDecoration: "none",
+                                          color: "rgb(0, 0, 0)",
+                                          fontSize: "12px",
+                                        }}
+                                      >
+                                        <span>
+                                          {props.currentUser.office_phone}
+                                        </span>
+                                      </a>
+                                      {props.currentUser.mobile_phone ?
+                                      <>
+                                      {" "}
+                                      |
+                                      {" "}
+                                      </>
+                                      : null}
+                                      <a
+                                        href="tel:555-555-555"
+                                        style={{
+                                          textDecoration: "none",
+                                          color: "rgb(0, 0, 0)",
+                                          fontSize: "12px",
+                                        }}
+                                      >
+                                        <span>
+                                          {props.currentUser.mobile_phone}
+                                        </span>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  : null}
+                                {props.currentUser.email ?
                                 <tr
                                   height="25"
                                   style={{ verticalAlign: "middle" }}
@@ -460,6 +469,7 @@ const TemplateOne = (props) => {
                                                   backgroundColor:
                                                     "rgb(242, 84, 125)",
                                                 }}
+                                                alt="Email icon"
                                               />
                                             </span>
                                           </td>
@@ -469,7 +479,7 @@ const TemplateOne = (props) => {
                                   </td>
                                   <td style={{ padding: "0px" }}>
                                     <a
-                                      href="mailto:alex@test.com"
+                                      href={"mailto:" + props.currentUser.email}
                                       style={{
                                         textDecoration: "none",
                                         color: "rgb(0, 0, 0)",
@@ -480,6 +490,7 @@ const TemplateOne = (props) => {
                                     </a>
                                   </td>
                                 </tr>
+                                : null}
                                 {props.currentUser.website_url ? (
                                   <tr
                                     height="25"
@@ -520,6 +531,7 @@ const TemplateOne = (props) => {
                                                     backgroundColor:
                                                       "rgb(242, 84, 125)",
                                                   }}
+                                                  alt="Website link icon"
                                                 />
                                               </span>
                                             </td>
@@ -528,8 +540,6 @@ const TemplateOne = (props) => {
                                       </table>
                                     </td>
                                     <td style={{ padding: "0px" }}>
-                                      {props.currentUser.website_url ? (
-                                        <>
                                           <a
                                             href={props.currentUser.website_url}
                                             style={{
@@ -542,8 +552,6 @@ const TemplateOne = (props) => {
                                               {props.currentUser.website_url}
                                             </span>
                                           </a>
-                                        </>
-                                      ) : null}
                                     </td>
                                   </tr>
                                 ) : null}
@@ -588,6 +596,7 @@ const TemplateOne = (props) => {
                                                     backgroundColor:
                                                       "rgb(242, 84, 125)",
                                                   }}
+                                                  alt="Address icon"
                                                 />
                                               ) : null}
                                             </span>
