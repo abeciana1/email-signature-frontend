@@ -17,11 +17,35 @@ const Home = (props) => {
                     <h1 className="brand-name" style={{ "fontSize": "50px" }}>jobase</h1>
                     <div style={{ "fontSize": "25px" }}>Making the job search simple</div>
                     <div style={{ "marginTop": "15px", "textAlign": "center" }}>
-                        <div style={{"width":"100px", "marginLeft":"auto","marginRight":"auto"}}>
-                            <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
-                                    <img src={process.env.PUBLIC_URL + "/images/quill-feather.png"} alt="email-signature-tool" style={{ "width":"5rem"}}/>
-                                    <div style={{"overflowWrap":"break-word", "width":"80px"}}>Email Signature Creator</div>
-                            </Link>
+                        <div style={{ "width": "60%", "marginLeft": "auto", "marginRight": "auto" }}>
+                            <Row xs={2} md={4} lg={6}>
+                                <Col></Col>
+                                <Col></Col>
+                                <Col>
+                                    <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
+                                        <img src={process.env.PUBLIC_URL + "/images/quill-feather.png"} alt="email-signature-tool" style={{ "width":"5rem"}}/>
+                                    </Link>
+                                </Col>
+                                <Col>
+                                    <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
+                                        <img src={process.env.PUBLIC_URL + "/images/briefcase.png"} alt="job-search-tool" style={{ "width": "5rem" }} />
+                                    </Link>
+                                </Col>
+                            </Row>
+                            <Row xs={2} md={4} lg={6}>
+                                <Col></Col>
+                                <Col></Col>
+                                <Col>
+                                    <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
+                                        <div style={{"overflowWrap":"break-word", "width":"80px"}}>Email Signature Creator</div>
+                                    </Link>
+                                </Col>
+                                <Col>
+                                    <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
+                                        <div style={{"overflowWrap":"break-word", "width":"80px"}}>Job Search</div>
+                                    </Link>
+                                </Col>
+                            </Row>
                         </div>
                     </div>
                 </div>
