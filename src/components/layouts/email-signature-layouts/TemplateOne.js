@@ -280,7 +280,8 @@ const TemplateOne = (props) => {
                             >
                               <span>{props.currentUser.job_title}</span>
                             </p>
-                            <p
+                            {props.currentUser.department || props.currentUser.company_name ?
+                              <p
                               style={{
                                 margin: "0px",
                                 fontWeight: "500",
@@ -288,11 +289,14 @@ const TemplateOne = (props) => {
                                 fontSize: "14px",
                                 lineHeight: "22px",
                               }}
-                            >
+                              >
                               <span>{props.currentUser.department}</span>
+                              {props.currentUser.department && props.currentUser.company_name ?
                               <span>&nbsp;|&nbsp;</span>
+                              : null}
                               <span>{props.currentUser.company_name}</span>
                             </p>
+                            : null}
                             <p
                               style={{
                                 color: "#000000",
