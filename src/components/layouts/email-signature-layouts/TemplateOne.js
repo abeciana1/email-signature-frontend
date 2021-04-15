@@ -259,7 +259,8 @@ const TemplateOne = (props) => {
                               textAlign: "left",
                             }}
                           >
-                            <h3
+                            {props.currentUser.first_name || props.currentUser.last_name ?
+                              <h3
                               style={{
                                 margin: "0px",
                                 fontSize: "18px",
@@ -267,10 +268,16 @@ const TemplateOne = (props) => {
                               }}
                             >
                               <span>{props.currentUser.first_name}</span>
-                              <span>&nbsp;</span>
+                              {props.currentUser.first_name && props.currentUser.last_name ?
+                                null
+                                : 
+                                <span>&nbsp;</span>
+                                }
                               <span>{props.currentUser.last_name}</span>
                             </h3>
-                            <p
+                            : null}
+                            {props.currentUser.job_title ?
+                              <p
                               style={{
                                 margin: "0px",
                                 color: "#000000",
@@ -280,6 +287,7 @@ const TemplateOne = (props) => {
                             >
                               <span>{props.currentUser.job_title}</span>
                             </p>
+                            : null}
                             {props.currentUser.department || props.currentUser.company_name ?
                               <p
                               style={{
