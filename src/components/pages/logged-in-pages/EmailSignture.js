@@ -47,9 +47,9 @@ class EmailSignature extends React.Component {
                             {/* <h3>Choose a Layout:</h3> <p>Slider with layout options</p> */}
                             <Row>
                                 <Col sm={4}>
-                                    -- Add buttons for switching --
+                                    {/* -- Add buttons for switching --
                                 <br />
-                                <button><img src="https://img.icons8.com/ios-glyphs/30/000000/text.png" alt="Details Form"/></button>
+                                <button><img src="https://img.icons8.com/ios-glyphs/30/000000/text.png" alt="Details Form"/></button> */}
                                     <div style={{ "height": "50%" }}>
                                         <div style={{"textAlign":"left", "overflowX":"scroll", "position":"fixed", "width":"30%", "height":"60%", "marginBottom": "0px", "paddingBottom":"5%"}}>
                                         { this.props.user.currentUser ?
