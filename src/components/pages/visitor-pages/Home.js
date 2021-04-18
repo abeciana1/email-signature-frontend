@@ -27,7 +27,7 @@ const Home = (props) => {
                                     </Link>
                                 </Col>
                                 <Col>
-                                    <Link to="/signature-creator" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
+                                    <Link to="/job-boards" style={{ "textDecoration": "none", "color": "#4C4C4C" }}>
                                         <img src={process.env.PUBLIC_URL + "/images/briefcase.png"} alt="job-search-tool" style={{ "width": "5rem" }} />
                                     </Link>
                                 </Col>

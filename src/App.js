@@ -13,6 +13,7 @@ import About from './components/pages/visitor-pages/About'
 import Contact from './components/pages/visitor-pages/Contact'
 import Login from './components/pages/visitor-pages/Login'
 import Signup from './components/pages/visitor-pages/Signup'
+import JobBoardCentral from './components/pages/visitor-pages/JobBoardCentral'
 
 //! logged in pages
 import EmailSignature from './components/pages/logged-in-pages/EmailSignture'
@@ -28,6 +29,10 @@ function App(props) {
     <>
       <NavBar />
       <Switch>
+        <Route
+          path="/job-boards"
+          component={JobBoardCentral}
+        />
         <Route
           path="/signature-creator"
           component={EmailSignature}
