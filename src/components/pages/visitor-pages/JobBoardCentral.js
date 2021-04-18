@@ -29,6 +29,9 @@ const JobBoardCentral = () => {
                     <Col sm>
                     </Col>
                 </Row>
+                <br />
+                <br />
+                <h2>More job boards coming soon!</h2>
             </FullPageLayout>
         </React.Fragment>
     )

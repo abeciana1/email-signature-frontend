@@ -47,27 +47,27 @@ class EmailSignatureDetailsForm extends React.Component {
                 (Fields will reset on reload)
                 <Form>
                     <Form.Group>
-                        <Form.Label style={{ "color": "#FFCD04" }}>Profile Image</Form.Label>
+                        <Form.Label>Profile Image</Form.Label>
                         <Form.Control type="text" placeholder="Profile Image" name="profile_image" value={this.state.profile_image} onChange={this.changeHandler} style={{"width":"75%"}} />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label style={{"color":"#FFCD04"}}>First Name</Form.Label>
+                        <Form.Label>First Name</Form.Label>
                         <Form.Control type="text" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label style={{"color":"#FFCD04"}}>Last Name</Form.Label>
+                        <Form.Label>Last Name</Form.Label>
                         <Form.Control type="text" placeholder="Last Name" name="last_name" value={this.state.last_name} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label style={{ "color": "#FFCD04" }}>Job Title</Form.Label>
+                        <Form.Label>Job Title</Form.Label>
                         <Form.Control type="text" placeholder="Job Title" name="job_title" value={this.state.job_title} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label style={{"color":"#FFCD04"}}>Department</Form.Label>
+                        <Form.Label>Department</Form.Label>
                         <Form.Control type="text" placeholder="Department" name="department" value={this.state.department} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label style={{"textAlign":"left"}}>Company Name</Form.Label>
+                        <Form.Label>Company Name</Form.Label>
                         <Form.Control type="text" placeholder="Company Name" name="company_name" value={this.state.company_name} onChange={this.changeHandler} style={{"width":"75%"}}/>
                     </Form.Group>
                     <Form.Group>
