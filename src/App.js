@@ -18,6 +18,9 @@ import JobBoardCentral from './components/pages/visitor-pages/JobBoardCentral'
 //! logged in pages
 import EmailSignature from './components/pages/logged-in-pages/EmailSignture'
 
+//!Job boards
+import Remotive from './components/pages/visitor-pages/job-board-pages/Remotive/Remotive'
+
 function App(props) {
   
   if (localStorage.getItem("isLoggedIn")) {
@@ -29,6 +32,10 @@ function App(props) {
     <>
       <NavBar />
       <Switch>
+        <Route
+          path="/job-boards/remotive"
+          component={Remotive}
+        />
         <Route
           path="/job-boards"
           component={JobBoardCentral}
