@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
+import RemotiveSearch from './RemotiveSearch'
 
 import FullPageLayout from '../../../../layouts/page-layouts/FullPageLayout';
 
@@ -14,6 +15,7 @@ const Remotive = () => {
             </Helmet>
             <FullPageLayout>
                 <h1>Remotive</h1>
+                <RemotiveSearch />
             </FullPageLayout>
         </React.Fragment>
     )
